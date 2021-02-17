@@ -10,11 +10,11 @@ npm start
 ```  
 ## Dependencies
 * create-react-app
-* React 16.7      --hooks
+* React 17.0.1    --hooks
 * Redux           --state management
 * React-Router-V4 --page management
 * Ant Design      --UI components
-* React Intl      --I18N
+* React I18NExt   --I18N
 * Gulp            --Process management
 * Restify         --Mock Server
 ## Solved Problems
