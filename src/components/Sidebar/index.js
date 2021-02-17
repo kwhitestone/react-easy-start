@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
-import data from './data';
 import { Link } from 'react-router-dom';
-import { Icon, Menu } from 'antd';
+import { Menu } from 'antd';
+import { HomeOutlined, SettingOutlined } from '@ant-design/icons'
 import styles from './sidebar.module.css';
-import logo from '../../assets/images/logo.svg';
+import { useTranslation } from 'react-i18next';
+import logo from '../../assets/images/logo.png';
 const { SubMenu } = Menu;
 
-const Sidebar = ({collapsed}) => {
+const Sidebar = ({ collapsed }) => {
   const [current, setCurrent] = useState('overview');
+
+  const { t } = useTranslation();
+
+  const data =
+    [{
+      "icon": <HomeOutlined />,
+      "key": "overview",
+      "label": "sidebar.overview",
+      "url": "/home/overview"
+    }, {
+      "icon": <SettingOutlined />,
+      "key": "setting",
+      "label": "sidebar.setting",
+      "children": [{
+        "key": "setting.account",
+        "label": "setting.account",
+        "url": "/home/setting/account"
+      }]
+    }]
 
   return (
     <div className="ant-layout-sider-children">
       <div className={styles.logo}>
         <a href="/">
           <img src={logo} alt="logo" />
-          <h1>React Easy Start</h1>
+          <h1>React Easy Startsy Start</h1>
         </a>
       </div>
       <Menu
@@ -31,11 +51,11 @@ const Sidebar = ({collapsed}) => {
             if (item.children instanceof Array) {
               return (
                 <SubMenu key={item.key}
-                         title={<span><Icon type={item.icon} /><span>{item.label}</span></span>}>
+                  title={<span>{item.icon}<span>{t(item.label)}</span></span>}>
                   {
                     item.children.map((subItem) => (
                       <Menu.Item key={subItem.key}>
-                        <Link to={subItem.url}>{subItem.label}</Link>
+                        <Link to={subItem.url}>{t(subItem.label)}</Link>
                       </Menu.Item>
                     ))
                   }
@@ -45,7 +65,7 @@ const Sidebar = ({collapsed}) => {
               return (
                 <Menu.Item key={item.key}>
                   <Link to={item.url}>
-                    <Icon type={item.icon} /><span>{item.label}</span>
+                    {item.icon}<span>{t(item.label)}</span>
                   </Link>
                 </Menu.Item>
               )

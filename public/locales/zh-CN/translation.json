@@ -1,0 +1,26 @@
+{
+  "welcome": "欢迎登录",
+  "overview": "概览",
+  "login": {
+    "account": "用户名",
+    "password": "密码",
+    "forgot": "忘记密码",
+    "remember": "记住",
+    "login": "登录",
+    "logout": "退出登录",
+    "failed": "登录失败",
+    "pleaseusername": "请输入用户名!",
+    "pleasepassword": "请输入密码!"
+  },
+  "account": {
+    "setting": "帐号设置"
+  },
+  "sidebar": {
+    "overview": "概览",
+    "setting": "设置"
+  },
+  "setting": {
+    "account": "帐号设置"
+  },
+  "copyright": "版权所有 @ 网龙 2021"
+}

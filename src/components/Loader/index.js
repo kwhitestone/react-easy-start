@@ -2,7 +2,7 @@ import React from 'react';
 import { Spin } from 'antd';
 import styles from './loader.module.css';
 
-const loader = () => {
+const Loader = () => {
   return (
     <div className={styles['loader-wrapper']}>
       <div className={styles['loader-content']}>
@@ -12,4 +12,4 @@ const loader = () => {
   );
 };
 
-export default loader;
+export default Loader;

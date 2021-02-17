@@ -1,0 +1,26 @@
+{
+  "welcome": "Please login",
+  "overview": "Overview",
+  "login": {
+    "account": "Account",
+    "password": "Password",
+    "forgot": "Forgot password",
+    "remember": "Remember me",
+    "login": "Login",
+    "logout": "Logout",
+    "failed": "Login failed",
+    "pleaseusername": "Please input username!",
+    "pleasepassword": "Please input password!"
+  },
+  "account": {
+    "setting": "Account Config"
+  },
+  "sidebar": {
+    "overview": "Overview",
+    "setting": "Settings"
+  },
+  "setting": {
+    "account": "Account Config"
+  },
+  "copyright": "Copyright @ Netdragon 2021"
+}

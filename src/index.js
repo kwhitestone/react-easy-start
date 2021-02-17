@@ -2,38 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { addLocaleData, IntlProvider } from 'react-intl';
-import en from 'react-intl/locale-data/en';
-import zh from 'react-intl/locale-data/zh';
-import ZH_WORDS from './assets/i18n/zh.json';
-import EN_WORDS from './assets/i18n/en.json';
+import { I18nextProvider } from 'react-i18next';
 import store from './Store.js';
 import App from './App';
+import i18n from './i18n';
 import 'antd/dist/antd.css';
 import './assets/css/common.css';
 
-addLocaleData([...en, ...zh]);
-
-const userLang = navigator.language || '';
-const language = userLang.toLowerCase().substr(0, 2);
-let locale;
-let messages;
-
-if (language === 'zh') {
-  locale = 'zh';
-  messages = ZH_WORDS;
-} else if (language === 'en') {
-  locale = 'en';
-  messages = EN_WORDS;
-}
+i18n.init({    
+    preload:['zh-CN','en-US'],
+    lng: 'zh-CN',
+    react: {
+      useSuspense: false
+    }
+  });
 
 ReactDOM.render(
-  <IntlProvider locale={locale} messages={messages}>
+  <I18nextProvider i18n={i18n}>
     <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </Provider>
-  </IntlProvider>,
+  </I18nextProvider>,
   document.getElementById('root')
 );

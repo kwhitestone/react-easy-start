@@ -2,7 +2,7 @@ import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer } from 'react-router-redux';
 import resetEnhancer from './enhancer/reset.js';
-import { reducer as loadingReducer } from './components/loading';
+import { reducer as loadingReducer } from './components/Loading';
 
 const originalReducers = {
   loading: loadingReducer,

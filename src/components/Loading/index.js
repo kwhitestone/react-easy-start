@@ -1,3 +1,6 @@
+import * as actions from './actions';
+import reducer from './reducer';
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
@@ -26,3 +29,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Loading);
+
+
+export {actions, reducer};
+
